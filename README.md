@@ -15,7 +15,7 @@
 
 开发过程中使用 Codex 等 AI 辅助工具进行代码、测试和材料编写。参赛者须理解并能解释模型调用、工具约束、资料检索与寻路逻辑；不把辅助生成内容或模拟测试当作现场调研、用户验证或真实开发历史。
 
-原始本地 Git 历史在发布时随交付附带于 `docs/competition/AccessAI-source-history.bundle`，用于核对导入远程仓库之前的真实提交。远程仓库保留正常导入与后续修改记录，不补造早期日期。获取交付文件后，可用 `git bundle verify docs/competition/AccessAI-source-history.bundle` 检查历史归档。
+本项目的 `main` 分支合并并保留了原始本地开发历史与 GitHub 仓库的初始化提交，使用正常 Git 推送发布，不改写早期提交日期。完整交付包另附 `docs/competition/AccessAI-source-history.bundle`；该历史归档不重复存入源码仓库。获取完整交付包后，可用 `git bundle verify docs/competition/AccessAI-source-history.bundle` 检查归档，或用 `git log --graph --all --oneline` 查看仓库历史。
 
 ## v4 新增与验证边界
 

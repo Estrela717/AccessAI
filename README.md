@@ -74,7 +74,7 @@ AI_API_KEY=YOUR_PRIVATE_API_KEY
 - 技术报告和提交清单在 `docs/competition/`，演示流程见 `DEMO-SCRIPT.md`。
 - 团队信息：云南大学、A 组、曲珈莹单人参赛、无指导教师；单点记录见 `docs/competition/team.json`，正式提交须与报名信息一致。
 - 代码仓库需要提供 GitHub/Gitee 地址或评审权限；本地 Git 不等于已经发布到远程。
-- 演示视频成片已制作：7 分 03 秒、1920×1080、MP4（H.264/AAC、30fps），含烧录字幕和独立 SRT。MP4 作为独立文件及完整交付包提供，包内路径为 `docs/competition/video/AccessAI-demo-1080p.mp4`；源代码仓库保留字幕、旁白、生成脚本和验证记录，不存储视频二进制。旁白为普通话合成语音，已明确不是参赛者本人录音。参赛者提交前仍需完整审看，确认讲解准确并能解释实现。
+- 演示视频已完成配音更新：7 分 03 秒、1920×1080 MP4，含烧录字幕和独立 SRT，采用百炼云端自然温和女声“龙安灵心”。旁白为 AI 合成，非参赛者本人录音；复用原始录屏，保留实际等待过程，未重新调用对话模型。新成片已通过构建检查，记录见 `docs/competition/video/video-verification.json`。MP4 随独立文件及完整交付包提供，路径为 `docs/competition/video/AccessAI-demo-1080p.mp4`；源代码仓库保留制作源文件，不存储视频二进制。参赛者提交前仍需完整审看并确认讲解准确。
 - 真实模型基础联调已完成，固定评测集结果见 `docs/competition/evidence/`；现场路线和目标用户验证未开展。规则与 mock provider 测试不代表模型准确率，小样本真实评测也不代表长期稳定性。
 - 官方页面标注 2026-11-18 截止，同时包含指导提交和后续最终提交表述，具体批次以个人中心通知为准。[官方赛道](https://www.boxuegu.com/matchTrack/detail/?id=10037)
 

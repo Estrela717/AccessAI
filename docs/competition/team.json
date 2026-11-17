@@ -13,5 +13,5 @@
   "submissionStatus": "尚未在赛事个人中心提交",
   "videoStatus": "已制作 7 分 03 秒、1080p MP4；普通话合成旁白，待参赛者审看",
   "videoPath": "docs/competition/video/AccessAI-demo-1080p.mp4",
-  "videoNarration": "Windows 普通话合成语音，不是参赛者本人录音"
+  "videoNarration": "已采用百炼云端 AI 合成女声：qwen-audio-3.1-tts-plus / longanlingxin_v3.1（龙安灵心）；不是参赛者本人录音，新成片已通过构建检查，详见 video-verification.json，仍待参赛者完整审看"
 }

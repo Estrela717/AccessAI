@@ -4,22 +4,31 @@
 
 成片为 `AccessAI-demo-1080p.mp4`。以 `video-verification.json` 记录的成片时长、分辨率、编码及检查结果为准。
 
-旁白使用本机 Windows 的 Microsoft Huihui 普通话合成语音，不是曲珈莹本人录音。片头和章节页均有标注。字幕在视频中直接显示，同时提供 `AccessAI-subtitles.srt`。`narration.txt` 是完整讲解稿。
+本轮已将旁白更换为百炼云端 AI 合成女声：模型 `qwen-audio-3.1-tts-plus`，音色 `longanlingxin_v3.1`（龙安灵心），采用自然、温和的普通话讲解。不是曲珈莹本人录音。34 句新旁白已合成，新成片已通过构建检查，仍需参赛者完整审看。视频烧录 35 条字幕，同时提供 `AccessAI-subtitles.srt`；`narration.txt` 为当前讲解稿。
+
+换配音复用原始浏览器录屏，总时间线保持约 `423.314` 秒，编码后时长为 `423.31` 秒，分辨率仍为 1920×1080。讲解稿已经精简，语音以 `1.04` 语速参数生成，再按 `0.90` 倍速度保音高处理；句间停顿按原章节时段对齐。最终音轨为 48 kHz，综合响度为 `-18.01 LUFS`、真峰值为 `-1.49 dBTP`。没有为换配音重新调用对话模型，也不改变录屏中的实际请求等待过程。录屏 JSON 中的 `voice` 字段属于当时的旧版录制计划；最终成片采用的音轨、音色和音频检查结果统一以 `video-verification.json` 为准。
 
 核心功能段来自实际浏览器录屏，真实提交模型请求，保留等待时间，没有使用模拟提供商冒充真实 AI。开头、架构和结尾是编辑制作的讲解页。路线为虚构云桥街区；六站资料来自保存的官方来源，不能证明实时设备状态或真实路线可达性。未采集真实 GPS。
 
 `recording-evidence.json` 记录本次录屏时间、章节时段、浏览器请求数量、应用 HTTP 状态、路线卡片和工具状态。它不是长期稳定性评测。前两次录制均未完成，历史诊断保存在 `recording-attempts.json`，原始帧在本地 `artifacts/video-build`，不作为成功演示材料。最终录制使用同一进程内的临时服务；这不证明长期稳定性。
 
-## 重新生成
+## 复用已有录屏生成新配音
 
-在项目根目录运行。需要 Node、Puppeteer、Edge，以及 Python 的 Pillow 和 imageio_ffmpeg；系统须安装 Windows 普通话语音和 Microsoft YaHei 字体。录制脚本默认在同一进程中启动随机本机端口的临时服务，完成后关闭，不影响 4173 服务。真实 AI 配置从项目本机 `.env` 读入内存，不写日志。也可用 `ACCESSAI_DEMO_URL` 指定已启动的本机服务。
+在项目根目录运行。需要 Node，以及 Python 的 Pillow 和 imageio_ffmpeg；字幕渲染使用 Microsoft YaHei 字体。云端配音使用本机已配置的百炼北京业务空间，凭据仅在合成程序内读取，不写入公开生成记录。只有明确传入 `--live` 才会调用付费语音接口；不传 `--live` 只显示用法，不产生合成费用。
 
 ```powershell
-python docs/competition/video/prepare-video.py
-node docs/competition/video/record-video.cjs
+# 可选：仅合成首句试听，仍需显式允许真实调用
+node docs/competition/video/synthesize-cloud.cjs --live --preview
+
+# 合成或复用缓存中的全部旁白
+node docs/competition/video/synthesize-cloud.cjs --live
+
+# 复用已有录屏，合成新音轨与字幕
 python docs/competition/video/build-video.py
 ```
 
-第一步只在本机合成语音；第二步录屏约七分钟，并向已配置模型提交四次功能请求；第三步按原始帧时间合成画面、旁白和字幕。不得在未完成或失败录制后强行生成成功成片。重录会另建带时间标记的原始帧目录，不覆盖之前的帧。
+云端配音与元数据缓存在忽略目录 `artifacts/video-build/neural`。文本与配置一致、缓存校验通过时可复用，避免重复合成。只有已完成且通过记录校验的录屏才用于组装成片；每次重新生成后均须核对时长、音量、停顿、字幕与画面同步，参赛者在提交前完整审看。
 
-原始帧、PCM 音频、复制到本机供渲染使用的字体、编码日志和抽帧检查图均位于忽略目录 `artifacts/video-build`，不需要向代码仓库提交。旁白未使用外部语音服务；密钥、浏览器个人资料和系统设置不出现在视频里。
+**已有录屏时不要重新录制，也不要再次运行 `prepare-video.py`。** 旧版 Windows 语音准备脚本与原始录屏记录保留用于追溯，不是本轮换配音流程。只有明确需要改变演示操作或修复录屏内容时才另行录制；录屏需要 Puppeteer 和 Edge，并可能再次产生对话模型调用费用。
+
+原始帧、音频、复制到本机供渲染使用的字体、编码日志和抽帧检查图均位于忽略目录 `artifacts/video-build`，不需要向代码仓库提交。新配音会将公开讲解稿发送至百炼语音服务；密钥、浏览器个人资料和系统设置不出现在视频里。

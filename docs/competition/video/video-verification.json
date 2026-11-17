@@ -4,9 +4,195 @@
   "videoCodec": "H.264",
   "audioCodec": "AAC",
   "fps": 30,
-  "fileBytes": 16344898,
-  "voice": "Microsoft Huihui zh-CN synthetic, rate 1.25",
+  "fileBytes": 17174281,
+  "voice": "Bailian qwen-audio-3.1-tts-plus / longanlingxin_v3.1, Mandarin synthetic narration; not the entrant's own voice",
+  "voiceModel": "qwen-audio-3.1-tts-plus",
+  "voiceId": "longanlingxin_v3.1",
+  "voiceName": "龙安灵心",
+  "speechGenerationRate": 1.04,
+  "pitchPreservingTempo": 0.9,
+  "audioSampleRate": 48000,
+  "neuralSegments": 34,
+  "narrationTiming": [
+    {
+      "id": "01-intro-1",
+      "start": 0.802,
+      "end": 12.1577
+    },
+    {
+      "id": "01-intro-2",
+      "start": 13.1849,
+      "end": 23.4232
+    },
+    {
+      "id": "01-intro-3",
+      "start": 24.4504,
+      "end": 35.527
+    },
+    {
+      "id": "01-intro-4",
+      "start": 36.5542,
+      "end": 46.871
+    },
+    {
+      "id": "02-normal-1",
+      "start": 49.171,
+      "end": 61.0281
+    },
+    {
+      "id": "02-normal-2",
+      "start": 63.052,
+      "end": 74.0666
+    },
+    {
+      "id": "02-normal-3",
+      "start": 76.0905,
+      "end": 86.92
+    },
+    {
+      "id": "02-normal-4",
+      "start": 88.9439,
+      "end": 99.098
+    },
+    {
+      "id": "03-reroute-1",
+      "start": 101.398,
+      "end": 110.1766
+    },
+    {
+      "id": "03-reroute-2",
+      "start": 112.6766,
+      "end": 121.8907
+    },
+    {
+      "id": "03-reroute-3",
+      "start": 124.3907,
+      "end": 133.2499
+    },
+    {
+      "id": "03-reroute-4",
+      "start": 135.7499,
+      "end": 145.383
+    },
+    {
+      "id": "04-guidance-1",
+      "start": 149.4,
+      "end": 158.4349
+    },
+    {
+      "id": "04-guidance-2",
+      "start": 160.9349,
+      "end": 170.5763
+    },
+    {
+      "id": "04-guidance-3",
+      "start": 173.0763,
+      "end": 182.2882
+    },
+    {
+      "id": "04-guidance-4",
+      "start": 184.7882,
+      "end": 193.2343
+    },
+    {
+      "id": "05-knowledge-1",
+      "start": 197.819,
+      "end": 206.3508
+    },
+    {
+      "id": "05-knowledge-2",
+      "start": 208.8508,
+      "end": 217.9896
+    },
+    {
+      "id": "05-knowledge-3",
+      "start": 220.4896,
+      "end": 229.941
+    },
+    {
+      "id": "05-knowledge-4",
+      "start": 232.441,
+      "end": 241.7484
+    },
+    {
+      "id": "05-knowledge-5",
+      "start": 244.2484,
+      "end": 253.8657
+    },
+    {
+      "id": "06-blocked-1",
+      "start": 258.911,
+      "end": 267.1768
+    },
+    {
+      "id": "06-blocked-2",
+      "start": 269.6768,
+      "end": 277.5228
+    },
+    {
+      "id": "06-blocked-3",
+      "start": 280.0228,
+      "end": 289.8338
+    },
+    {
+      "id": "06-blocked-4",
+      "start": 292.3338,
+      "end": 300.8632
+    },
+    {
+      "id": "07-architecture-1",
+      "start": 304.349,
+      "end": 314.8466
+    },
+    {
+      "id": "07-architecture-2",
+      "start": 317.3466,
+      "end": 328.27
+    },
+    {
+      "id": "07-architecture-3",
+      "start": 330.77,
+      "end": 341.5141
+    },
+    {
+      "id": "07-architecture-4",
+      "start": 344.0141,
+      "end": 355.0203
+    },
+    {
+      "id": "07-architecture-5",
+      "start": 357.5203,
+      "end": 367.5913
+    },
+    {
+      "id": "08-close-1",
+      "start": 371.543,
+      "end": 381.525
+    },
+    {
+      "id": "08-close-2",
+      "start": 383.8985,
+      "end": 393.3662
+    },
+    {
+      "id": "08-close-3",
+      "start": 395.7397,
+      "end": 407.5092
+    },
+    {
+      "id": "08-close-4",
+      "start": 409.8827,
+      "end": 421.814
+    }
+  ],
+  "audioLoudness": {
+    "integratedLufs": -18.01,
+    "truePeakDbtp": -1.49,
+    "rangeLu": 5.6
+  },
   "realBrowserRecording": true,
+  "reusedRecordingRunId": "20261117161706589",
+  "newChatModelRequestsForRevoice": 0,
   "actualApiRequests": 4,
   "actualApiHttpStatuses": [
     200,
@@ -26,17 +212,8 @@
   ],
   "apiWaitsPreserved": true,
   "openingResizeFramesReplacedWithStableTitle": 1,
-  "subtitles": 41,
+  "subtitles": 35,
   "scope": "Synthetic route demonstration and saved official station records; no field or GPS validation.",
   "encodedDurationSeconds": 423.31,
-  "visualReview": {
-    "chapterSamples": 8,
-    "result": "Reviewed title, route, reroute, guidance, sources, no-route, architecture, and closing frames; no clipped subtitles or missing Chinese glyphs found."
-  },
-  "sourceAudioCheck": {
-    "segments": 34,
-    "nonSilent": true,
-    "minimumRms": 1568.6
-  },
-  "sha256": "ad8d08465f3468009b69e26471feeb78851c29aa6ddb98cfcf54aba2a09bf18d"
+  "sha256": "01029536aed0e590874f6b82a79b52bbea2066c37ef223c74afab51752b5cf9f"
 }

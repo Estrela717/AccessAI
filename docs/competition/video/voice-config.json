@@ -1,0 +1,11 @@
+{
+  "model": "qwen-audio-3.1-tts-plus",
+  "voice": "longanlingxin_v3.1",
+  "voiceName": "龙安灵心",
+  "language": "zh",
+  "sampleRate": 48000,
+  "rate": 1.04,
+  "instruction": "用标准普通话进行科技作品演示讲解。声音自然、温和、清晰，有亲切感和适度的抑扬顿挫，像认真介绍自己熟悉的作品。句间留出自然停顿，重点数字读清楚，句末平稳收尾。避免夸张表演、播音腔、撒娇、耳语和过重气声。Access AI读作英文名称，AI、GPS和Node按常见技术名称读法朗读。曲珈莹中的曲读qu一声。",
+  "source": "https://help.aliyun.com/zh/model-studio/qwen-audio-tts-http-api",
+  "voiceList": "https://help.aliyun.com/zh/model-studio/qwen-audio-tts-voice-list"
+}

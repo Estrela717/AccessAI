@@ -1,0 +1,27 @@
+{
+  "earlierRecordingAttempts": [
+    {
+      "recordedAt": "2026-11-17T16:04:18.915Z",
+      "passed": false,
+      "attemptedUserRequests": 1,
+      "successfulUserRequests": 0,
+      "failedSection": "02-normal",
+      "applicationHttpStatuses": [],
+      "errorObserved": "Initial recording stopped before a completed answer; detailed network diagnostics were not captured.",
+      "note": "Using existing 4173 local service. Root agent separately observed a successful request on that service; these failures alone do not establish a product defect or universal service outage."
+    },
+    {
+      "recordedAt": "2026-11-17T16:14:05.635Z",
+      "passed": false,
+      "attemptedUserRequests": 1,
+      "successfulUserRequests": 0,
+      "failedSection": "02-normal",
+      "applicationHttpStatuses": [
+        200
+      ],
+      "errorObserved": "暂时无法连接模型服务，请检查服务端配置或稍后重试。",
+      "note": "Using existing 4173 local service. Root agent separately observed a successful request on that service; these failures alone do not establish a product defect or universal service outage."
+    }
+  ],
+  "finalRecording": "recording-evidence.json"
+}

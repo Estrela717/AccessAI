@@ -1,0 +1,17 @@
+{
+  "school": "云南大学",
+  "group": "A 组",
+  "members": [
+    { "name": "曲珈莹", "responsibility": "单人负责项目实现与参赛材料" }
+  ],
+  "advisors": [],
+  "repositoryPlatform": "GitHub",
+  "repository": "https://github.com/Estrela717/AccessAI",
+  "publicDemo": "",
+  "version": "v4.1.0",
+  "confirmedByUser": "2026-11-17",
+  "submissionStatus": "尚未在赛事个人中心提交",
+  "videoStatus": "已制作 7 分 03 秒、1080p MP4；普通话合成旁白，待参赛者审看",
+  "videoPath": "docs/competition/video/AccessAI-demo-1080p.mp4",
+  "videoNarration": "Windows 普通话合成语音，不是参赛者本人录音"
+}

@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 VERSION = json.loads((ROOT / 'package.json').read_text(encoding='utf-8'))['version']
 TARGET = ROOT.parent / f'AccessAI-submission-v{VERSION}.zip'
 VIDEO = ROOT / 'docs/competition/video/AccessAI-demo-1080p.mp4'
-HISTORY = ROOT / 'artifacts' / f'AccessAI-v{VERSION}.bundle'
+HISTORY = ROOT / 'docs/competition/AccessAI-source-history.bundle'
 PDF = ROOT / 'docs/competition/AccessAI-technical-report.pdf'
 
 def git(*args):

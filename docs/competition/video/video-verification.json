@@ -1,0 +1,42 @@
+{
+  "durationSeconds": 423.314,
+  "resolution": "1920x1080",
+  "videoCodec": "H.264",
+  "audioCodec": "AAC",
+  "fps": 30,
+  "fileBytes": 16344898,
+  "voice": "Microsoft Huihui zh-CN synthetic, rate 1.25",
+  "realBrowserRecording": true,
+  "actualApiRequests": 4,
+  "actualApiHttpStatuses": [
+    200,
+    200,
+    200,
+    200
+  ],
+  "providerHttpStatuses": [
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200
+  ],
+  "apiWaitsPreserved": true,
+  "openingResizeFramesReplacedWithStableTitle": 1,
+  "subtitles": 41,
+  "scope": "Synthetic route demonstration and saved official station records; no field or GPS validation.",
+  "encodedDurationSeconds": 423.31,
+  "visualReview": {
+    "chapterSamples": 8,
+    "result": "Reviewed title, route, reroute, guidance, sources, no-route, architecture, and closing frames; no clipped subtitles or missing Chinese glyphs found."
+  },
+  "sourceAudioCheck": {
+    "segments": 34,
+    "nonSilent": true,
+    "minimumRms": 1568.6
+  },
+  "sha256": "ad8d08465f3468009b69e26471feeb78851c29aa6ddb98cfcf54aba2a09bf18d"
+}

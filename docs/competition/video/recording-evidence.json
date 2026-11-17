@@ -1,0 +1,131 @@
+{
+  "runId": "20261117161706589",
+  "recordedAt": "2026-11-17T16:17:07.046Z",
+  "source": "Actual browser screenshot stream with original elapsed times",
+  "voice": "Windows Microsoft Huihui, Mandarin synthetic narration, speaking rate 1.25",
+  "width": 1920,
+  "height": 1080,
+  "sections": [
+    {
+      "id": "01-intro",
+      "title": "01 / 问题与作品边界",
+      "start": 0.002,
+      "plannedDuration": 48.3575,
+      "duration": 48.369
+    },
+    {
+      "id": "02-normal",
+      "title": "02 / 真实 AI：理解需求并调用工具",
+      "start": 48.371,
+      "plannedDuration": 52.2275,
+      "duration": 52.227
+    },
+    {
+      "id": "03-reroute",
+      "title": "03 / 电梯停运：保持条件重新规划",
+      "start": 100.598,
+      "plannedDuration": 48,
+      "duration": 48.002
+    },
+    {
+      "id": "04-guidance",
+      "title": "04 / 从路线结果进入分步指引",
+      "start": 148.6,
+      "plannedDuration": 48.415,
+      "duration": 48.419
+    },
+    {
+      "id": "05-knowledge",
+      "title": "05 / 官方资料问答与来源核对",
+      "start": 197.019,
+      "plannedDuration": 61.0875,
+      "duration": 61.092
+    },
+    {
+      "id": "06-blocked",
+      "title": "06 / 没有可用路线时明确停止",
+      "start": 258.111,
+      "plannedDuration": 45.435,
+      "duration": 45.438
+    },
+    {
+      "id": "07-architecture",
+      "title": "07 / 架构、测试与创新点",
+      "start": 303.549,
+      "plannedDuration": 67.1925,
+      "duration": 67.194
+    },
+    {
+      "id": "08-close",
+      "title": "08 / 局限与下一步验证",
+      "start": 370.743,
+      "plannedDuration": 52.5625,
+      "duration": 52.571
+    }
+  ],
+  "requests": [
+    {
+      "elapsedMs": 6735,
+      "mode": "live",
+      "routeCard": "路线工具计算结果 · 虚构街区云桥路西段人行道 · 演示起点 → 星河商场560 米 · 演示距离通道净宽要求：100 厘米 · 设施正常沿云桥路西段人行道，约 150 米，到达云桥路西路口。沿云桥路中段人行道，约 180 米，到达云桥路中段。沿升降设施南侧通道，约 80 米，到达E4 升降连接南侧。共 7 个路段说明，进入指引可查看全部。确认模拟起点，进入分步指引 →路线、尺寸与设施状态均为合成演示数据，不用于实际出行。",
+      "sourceIds": [],
+      "toolStatus": [
+        "ok"
+      ]
+    },
+    {
+      "elapsedMs": 10233,
+      "mode": "live",
+      "routeCard": "路线工具计算结果 · 虚构街区云桥路西段人行道 · 演示起点 → 星河商场890 米 · 演示距离通道净宽要求：100 厘米 · E4 电梯停运沿云桥路西段人行道，约 150 米，到达云桥路西路口。沿云桥路中段人行道，约 180 米，到达云桥路中段。沿升降设施南侧通道，约 80 米，到达E4 升降连接南侧。共 9 个路段说明，进入指引可查看全部。确认模拟起点，进入分步指引 →路线、尺寸与设施状态均为合成演示数据，不用于实际出行。",
+      "sourceIds": [],
+      "toolStatus": [
+        "ok"
+      ]
+    },
+    {
+      "elapsedMs": 7572,
+      "mode": "live",
+      "routeCard": null,
+      "sourceIds": [
+        "[hk-hong-kong-4] 香港 香港站 · 港铁 · Barrier-free Facilities Search（Hong Kong）",
+        "[hk-hong-kong-1] 香港 香港站 · 港铁 · Barrier-free Facilities Search（Hong Kong）",
+        "[hk-hong-kong-2] 香港 香港站 · 港铁 · Barrier-free Facilities Search（Hong Kong）",
+        "[hk-hong-kong-3] 香港 香港站 · 港铁 · Barrier-free Facilities Search（Hong Kong）"
+      ],
+      "toolStatus": [
+        "ok"
+      ]
+    },
+    {
+      "elapsedMs": 4904,
+      "mode": "live",
+      "routeCard": "路线工具计算结果 · 虚构街区暂不能生成可用路线医院入口连接通道正在模拟施工，其他连接尚未核验，当前没有可用路线。路线、尺寸与设施状态均为合成演示数据，不用于实际出行。",
+      "sourceIds": [],
+      "toolStatus": [
+        "no-route"
+      ]
+    }
+  ],
+  "apiAttempts": 4,
+  "apiStatuses": [
+    200,
+    200,
+    200,
+    200
+  ],
+  "passed": true,
+  "providerStatuses": [
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200
+  ],
+  "providerNetworkErrors": [],
+  "serviceMode": "Isolated temporary server in the recording process; genuine configured provider",
+  "duration": 423.314,
+  "frameCount": 2663
+}

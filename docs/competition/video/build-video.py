@@ -188,5 +188,6 @@ for i in range(8):
     picture=Image.open(qa/f'{i+1}.jpg');picture.thumbnail((960,540));contact.paste(picture,((i%2)*960,(i//2)*540))
 contact.save(qa/'contact-sheet.jpg',quality=92)
 subprocess.run([FFMPEG,'-hide_banner','-loglevel','error','-y','-i',str(BUILD/'narration-master.wav'),
-    '-t','46','-c:a','libmp3lame','-b:a','192k',str(NEURAL/'voice-preview.mp3')],check=True)
+    '-t',str(RECORDING['sections'][0]['start'] + RECORDING['sections'][0]['duration']),
+    '-c:a','libmp3lame','-b:a','192k',str(NEURAL/'voice-preview.mp3')],check=True)
 print(json.dumps(verify,ensure_ascii=False))

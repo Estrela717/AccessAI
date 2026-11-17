@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">示例医院门诊无台阶入口</title>
+  <desc id="desc">灰蓝色门诊楼前有宽阔平整的人行通道，绿色路线穿过入口前的开阔区域到达自动门。此图为虚构医院的建筑示意，不代表真实通行条件。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto"><path d="M0 0 6 3 0 6" fill="none" stroke="#427a64" stroke-width="1.6"/></marker></defs>
+  <rect width="800" height="450" fill="#f1f4f6"/>
+  <path d="M0 305 305 211 800 305v145H0Z" fill="#e8edf0"/>
+  <path d="m89 344 246-89 389 78-244 117Z" fill="#fafbfd"/>
+  <g fill="none" stroke="#dde4e8"><path d="m159 319 396 94M237 290l398 91M431 274 220 394M530 294 321 420M632 315 427 447"/></g>
+  <path d="M289 97 577 97 670 126 383 127Z" fill="#d6dfe6"/>
+  <path d="M289 97H577V303H289Z" fill="#e3e9ed" stroke="#bdcbd5"/>
+  <path d="M577 97 670 126V326L577 303Z" fill="#c6d3dc" stroke="#b9c7d1"/>
+  <path d="M305 116H561V147H305Z" fill="#f8fafc"/>
+  <rect x="317" y="122" width="18" height="18" rx="2" fill="#315c8b"/>
+  <path d="M326 126v10m-5-5h10" stroke="#fff" stroke-width="2.5"/>
+  <text x="348" y="138" fill="#354c65" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="16" letter-spacing="3">门诊楼</text>
+  <g fill="#a9c0d0" stroke="#819eb4"><rect x="310" y="161" width="46" height="38"/><rect x="376" y="161" width="46" height="38"/><rect x="442" y="161" width="46" height="38"/><rect x="508" y="161" width="46" height="38"/></g>
+  <g stroke="#d9e5eb" stroke-width="2"><path d="M333 162v35m66-35v35m66-35v35m66-35v35"/></g>
+  <g fill="#9cb5c6"><path d="m593 155 27 8v35l-27-8ZM632 166l23 7v35l-23-8ZM593 211l27 8v35l-27-8ZM632 222l23 7v35l-23-8Z"/></g>
+  <rect x="309" y="221" width="59" height="68" fill="#bdccd6"/>
+  <rect x="502" y="221" width="55" height="68" fill="#bdccd6"/>
+  <path d="M384 231h105v73H384Z" fill="#364f66"/>
+  <path d="M390 237h42v61h-42ZM440 237h42v61h-42Z" fill="#b3cbd6"/>
+  <path d="M397 245h28v15h-28ZM447 245h28v15h-28Z" fill="#dbe7ed"/>
+  <path d="M426 266v14m19-14v14" stroke="#6b8ba1" stroke-width="2"/>
+  <path d="m374 215 125 0 22 11-127 0Z" fill="#8fa7ba"/>
+  <path d="M374 215h125v13H374Z" fill="#6a869d"/>
+  <text x="409" y="225" fill="#fff" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="9">门诊入口</text>
+  <path d="m205 380 113-50 122-20" fill="none" stroke="#d3e3db" stroke-width="30"/>
+  <path d="m205 380 113-50 122-20" fill="none" stroke="#427a64" stroke-width="3.5" marker-end="url(#arrow)"/>
+  <g transform="translate(265 285)"><circle r="18" fill="#fff" stroke="#9fb4ac"/><circle cy="-8" r="3" fill="#427a64"/><path d="M-1-2v9h9l4 7M-5 2a8 8 0 1 0 8 13" stroke="#427a64" stroke-width="2.3" fill="none" stroke-linecap="round"/></g>
+  <g><path d="M194 298v-92" stroke="#8b9f97" stroke-width="6"/><ellipse cx="194" cy="203" rx="30" ry="39" fill="#b6c8be"/><path d="M194 219v-31m0 17-13-10" stroke="#8fa89b" stroke-width="2"/><path d="m164 294 62 15v17l-62-16Z" fill="#cdd8d3"/><ellipse cx="195" cy="299" rx="31" ry="11" fill="#a9c0b1"/></g>
+  <path d="m619 347 56 13 15-8-56-12Z" fill="#ccd7dc"/><path d="m619 347 56 13v12l-56-13Z" fill="#aabcc7"/>
+  <text x="35" y="36" fill="#637486" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="12">医院 · 门诊入口</text>
+  <text x="35" y="423" fill="#74818d" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="12">虚构场景示意</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">星河商场无台阶入口示意</title>
+  <desc id="desc">星河商场入口前为连续平整的广场，绿色路径到达宽敞的自动门。入口旁有无障碍标识和花坛。具体入口名称以当前路线文字为准。此图为虚构场景示意。</desc>
+  <defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#f8f5ed"/><stop offset="1" stop-color="#e5ecdf"/></linearGradient><linearGradient id="glass" x2="1" y2="1"><stop stop-color="#accfbd"/><stop offset="1" stop-color="#638f78"/></linearGradient><marker id="arrow" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto"><path d="M0 0 6 3 0 6" fill="none" stroke="#28755a" stroke-width="1.7"/></marker></defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <circle cx="109" cy="108" r="94" fill="#ece9d9"/>
+  <path d="m67 316 266-137 398 124-257 141Z" fill="#edece0"/>
+  <g stroke="#d6dccb" fill="none"><path d="m144 277 408 121M225 235l408 122M413 204 159 358M513 236 266 399M620 269 370 434"/></g>
+  <path d="m252 58 110-29 343 104-113 39Z" fill="#f6f0e2"/>
+  <path d="m252 58 340 114v149L252 211Z" fill="#dfe2d4"/>
+  <path d="m592 172 113-39v150l-113 38Z" fill="#b9cbb6"/>
+  <path d="m272 99 298 99v89l-298-96Z" fill="#305944"/>
+  <path d="m283 110 66 22v70l-66-21ZM357 134l66 22v70l-66-21ZM431 159l66 22v70l-66-21ZM505 183l53 18v69l-53-17Z" fill="url(#glass)"/>
+  <path d="m284 113 64 22v16l-64-21ZM358 137l64 22v16l-64-21ZM432 162l64 22v16l-64-21ZM506 186l51 17v16l-51-17Z" fill="#d8e6d4" opacity=".6"/>
+  <path d="m369 189 51 17v49l-51-17ZM425 208l51 17v49l-51-17Z" fill="#d0e1cc"/>
+  <path d="m375 196 39 13v35l-39-13ZM431 215l39 13v35l-39-13Z" fill="#a0c2a9"/>
+  <path d="m396 216 13 4M435 229l13 4" stroke="#507b59" stroke-width="3" stroke-linecap="round"/>
+  <path d="m345 174 151 51 27-11-151-50Z" fill="#efd4ad"/>
+  <path d="m345 174 151 51v10l-151-50Z" fill="#cba472"/>
+  <text x="307" y="91" transform="rotate(18.5 307 91)" fill="#2d553d" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="25" font-weight="600" letter-spacing="8">星河商场</text>
+  <path d="m604 190 88-30v26l-88 30ZM604 225l88-30v26l-88 30Z" fill="#9dbba0"/>
+  <path d="m197 367 143-72 84-37" fill="none" stroke="#bed8c0" stroke-width="40" stroke-linejoin="round"/>
+  <path d="m197 367 143-72 84-37" fill="none" stroke="#28755a" stroke-width="4" marker-end="url(#arrow)"/>
+  <g transform="translate(306 278)"><circle r="25" fill="#fafbf0" stroke="#7fa785" stroke-width="2"/><circle cy="-12" r="4.5" fill="#2b6548"/><path d="M-1-4v13h12l5 10M0 1h10M-7 2a12 12 0 1 0 10 18" fill="none" stroke="#2b6548" stroke-width="3" stroke-linecap="round"/></g>
+  <path d="m153 234 51 16v33l-51-16Z" fill="#c2c6a8"/><ellipse cx="179" cy="236" rx="30" ry="14" fill="#91aa7f"/><path d="M179 234v-80" stroke="#829268" stroke-width="7"/><ellipse cx="179" cy="150" rx="34" ry="42" fill="#a9bf9e"/><ellipse cx="168" cy="140" rx="24" ry="32" fill="#bdd1ae"/>
+  <path d="m548 325 59 19v30l-59-20Z" fill="#c2c6a8"/><ellipse cx="578" cy="327" rx="34" ry="16" fill="#93aa7b"/><path d="M578 325v-61" stroke="#829268" stroke-width="6"/><ellipse cx="578" cy="261" rx="28" ry="34" fill="#a9bf9e"/><ellipse cx="570" cy="253" rx="22" ry="27" fill="#bdd1ae"/>
+  <g transform="translate(42 32)"><rect width="137" height="31" rx="15.5" fill="#fffef7" stroke="#d7ded1"/><circle cx="18" cy="15.5" r="4" fill="#4c8d6d"/><text x="31" y="21" fill="#3d5d4c" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="12">1F · 商场入口</text></g>
+  <g transform="translate(548 373)"><rect width="196" height="37" rx="10" fill="#fffef8" stroke="#d2dacc"/><text x="15" y="24" fill="#244f3e" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="13" font-weight="600">平整入口 · 无需跨越台阶</text></g>
+  <text x="42" y="421" fill="#69796a" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="12" letter-spacing="2">场景示意</text>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">地铁出口到星河商场的街面通道示意</title>
+  <desc id="desc">地铁电梯出口连接宽阔的平整街面通道，绿色路径沿花坛外侧前往商场。右前方为商场入口，路径没有台阶。此图为虚构场景示意。</desc>
+  <defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#f8f6ee"/><stop offset="1" stop-color="#e7ecdf"/></linearGradient><linearGradient id="glass" x2="1" y2="1"><stop stop-color="#b0d1c1"/><stop offset="1" stop-color="#6e9c88"/></linearGradient><marker id="arrow" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto"><path d="M0 0 6 3 0 6" fill="none" stroke="#28755a" stroke-width="1.7"/></marker></defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <circle cx="669" cy="74" r="50" fill="#f0dec1"/>
+  <g fill="#e6e9dc"><path d="M72 191V94h55v97ZM139 179V71h73v108ZM641 200V103h72v97ZM721 214V155h41v59Z"/></g>
+  <path d="M39 302 315 176 760 313 481 444Z" fill="#d9dfd0"/>
+  <path d="m39 302 442 142v-15L39 287Z" fill="#becbb6"/>
+  <path d="m481 444 279-131v-15L481 429Z" fill="#a9bda5"/>
+  <path d="m71 300 247-110 405 121-243 112Z" fill="#f2f0e4"/>
+  <g stroke="#dbdfd1" fill="none"><path d="m137 270 404 125M210 236l404 125M416 218 171 331M517 249 275 365M619 280 377 397"/></g>
+  <ellipse cx="201" cy="279" rx="88" ry="26" fill="#b6c7b1" opacity=".4"/>
+  <path d="m114 170 62-30 79 22-61 31Z" fill="#d9e4d4"/>
+  <path d="m114 170 80 23v99l-80-27Z" fill="#9ab9a4"/>
+  <path d="m194 193 61-31v99l-61 31Z" fill="#47725a"/>
+  <path d="m124 187 24 7v68l-24-8ZM155 197l27 8v69l-27-9Z" fill="url(#glass)"/>
+  <path d="m202 202 44-22v76l-44 22Z" fill="#c3d8c1"/>
+  <path d="m207 212 34-17v52l-34 17Z" fill="#97bea6"/>
+  <path d="m111 161 64-29 85 23v10l-66 34-83-25Z" fill="#234e3b"/>
+  <text x="127" y="180" transform="rotate(16 127 180)" fill="#fffdf4" font-family="Arial,sans-serif" font-size="15" font-weight="700">METRO</text>
+  <path d="m447 91 149-32 111 40-143 38Z" fill="#efe9db"/>
+  <path d="m447 91 117 46v149l-117-40Z" fill="#d5dccd"/>
+  <path d="m564 137 143-38v149l-143 38Z" fill="#bccfbc"/>
+  <g fill="url(#glass)"><path d="m458 127 40 16v38l-40-15ZM508 147l42 16v38l-42-15ZM575 150l50-13v39l-50 13ZM637 133l56-15v39l-56 15Z"/></g>
+  <path d="m473 205 64 23v47l-64-22Z" fill="#245742"/><path d="m480 212 23 8v38l-23-8ZM508 223l22 8v37l-22-8Z" fill="#a8cbb2"/>
+  <path d="m449 192 103 38 21-9-103-37Z" fill="#e5c9a0"/><path d="m449 192 103 38v9l-103-37Z" fill="#cda677"/>
+  <text x="469" y="112" transform="rotate(21 469 112)" fill="#325a42" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="17" font-weight="600">星河商场</text>
+  <path d="m256 302 102 32 105-49 32-14" fill="none" stroke="#c0dac2" stroke-width="34" stroke-linejoin="round"/>
+  <path d="m256 302 102 32 105-49 32-14" fill="none" stroke="#28755a" stroke-width="4" marker-end="url(#arrow)"/>
+  <g><path d="m318 198 53 15v17l-53-16Z" fill="#b7bf9b"/><ellipse cx="345" cy="200" rx="30" ry="13" fill="#7b9c72"/><path d="M345 199v-71" stroke="#7c8a60" stroke-width="7"/><ellipse cx="345" cy="124" rx="31" ry="35" fill="#a9bea0"/><ellipse cx="334" cy="119" rx="24" ry="30" fill="#b8cbae"/></g>
+  <g><path d="m627 331 50 15v16l-50-17Z" fill="#b7bf9b"/><ellipse cx="652" cy="334" rx="27" ry="12" fill="#7b9c72"/><path d="M652 334v-59" stroke="#7c8a60" stroke-width="6"/><ellipse cx="652" cy="272" rx="26" ry="30" fill="#a9bea0"/><ellipse cx="642" cy="268" rx="20" ry="26" fill="#b8cbae"/></g>
+  <g transform="translate(42 32)"><rect width="126" height="31" rx="15.5" fill="#fffef7" stroke="#d7ded1"/><circle cx="18" cy="15.5" r="4" fill="#4c8d6d"/><text x="31" y="21" fill="#3d5d4c" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="12">1F · 街面通道</text></g>
+  <text x="42" y="421" fill="#69796a" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="12" letter-spacing="2">场景示意</text>
+</svg>

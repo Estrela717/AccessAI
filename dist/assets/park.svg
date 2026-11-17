@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">示例公园东入口与平整通道</title>
+  <desc id="desc">公园东入口采用宽敞的开放通道，两侧为灰蓝色栏杆和导览牌，绿色路径由入口前广场通向园内。此图为虚构场景示意，不代表真实通行条件。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto"><path d="M0 0 6 3 0 6" fill="none" stroke="#427a64" stroke-width="1.6"/></marker></defs>
+  <rect width="800" height="450" fill="#f1f4f6"/>
+  <path d="M36 295 328 156 761 278 474 433Z" fill="#dce6df"/>
+  <path d="m36 295 438 138v13L36 308Z" fill="#c5d1cd"/>
+  <path d="m474 433 287-155v13L474 446Z" fill="#bacbc3"/>
+  <path d="m191 345 151-75 40-65 53-5 17 62 111 28-111 58-103-28-101 49Z" fill="#f9fbfb"/>
+  <path d="m70 293 151-70 492 65-57 29-449-61-73 55Z" fill="#e7ecec"/>
+  <g fill="none" stroke="#a8bbc2" stroke-width="4"><path d="m85 277 172 48m-172-83 172 48M104 248v34m28-27v34m29-25v33m29-25v33m29-25v33m29-25v33"/><path d="m476 297 237-110m-237 78 237-110M494 259v29m31-43v29m31-43v29m31-43v29m31-43v29m31-43v29m31-43v29m30-42v29"/></g>
+  <path d="m259 177 26-11 29 8-26 12Z" fill="#d1dce2"/>
+  <path d="m259 177 29 9v141l-29-9Z" fill="#aebfc9"/>
+  <path d="m288 186 26-12v141l-26 12Z" fill="#92a9b7"/>
+  <path d="m448 219 26-11 29 8-26 12Z" fill="#d1dce2"/>
+  <path d="m448 219 29 9v88l-29-9Z" fill="#aebfc9"/>
+  <path d="m477 228 26-12v88l-26 12Z" fill="#92a9b7"/>
+  <path d="m265 161 191 42 17 10-191-42Z" fill="#c7d5dd"/>
+  <path d="m265 161 191 42v31l-191-44Z" fill="#52758f"/>
+  <text x="307" y="186" transform="rotate(12.8 307 186)" fill="#fff" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="15" letter-spacing="3">公园东入口</text>
+  <path d="m229 358 124-57 25-36" fill="none" stroke="#d1e1d8" stroke-width="30"/>
+  <path d="m229 358 124-57 25-36" fill="none" stroke="#427a64" stroke-width="3.5" marker-end="url(#arrow)"/>
+  <path d="m536 258 52-25v-61l-52 25Z" fill="#e7eef1" stroke="#9db0bc"/>
+  <path d="m544 203 36-17v31l-36 17Z" fill="#c2d6cc"/>
+  <path d="m550 226 9-18 13-4" fill="none" stroke="#628c77" stroke-width="2"/>
+  <path d="m553 250 0 22m20-31v22" stroke="#8b9faa" stroke-width="3"/>
+  <g><path d="M181 243v-88" stroke="#8e9e98" stroke-width="6"/><ellipse cx="181" cy="151" rx="31" ry="39" fill="#bbcfc1"/><path d="M181 175v-37m0 20-15-12" stroke="#94ad9d" stroke-width="2"/></g>
+  <g><path d="M616 157v-60" stroke="#8e9e98" stroke-width="5"/><ellipse cx="616" cy="94" rx="27" ry="32" fill="#c5d6c9"/><path d="M616 112V84m0 18 11-11" stroke="#9bb1a2" stroke-width="2"/></g>
+  <g><path d="M676 295v-67" stroke="#8e9e98" stroke-width="5"/><ellipse cx="676" cy="224" rx="28" ry="34" fill="#bbcec0"/><path d="M676 247v-36" stroke="#97ac9e" stroke-width="2"/></g>
+  <ellipse cx="477" cy="163" rx="54" ry="21" fill="#c2d3db"/><ellipse cx="477" cy="159" rx="50" ry="17" fill="#d7e4e9"/><path d="M464 160q13-11 26 0" fill="none" stroke="#b1c9d4" stroke-width="2"/>
+  <text x="35" y="36" fill="#637486" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="12">公园 · 东入口</text>
+  <text x="35" y="423" fill="#74818d" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="12">虚构场景示意</text>
+</svg>

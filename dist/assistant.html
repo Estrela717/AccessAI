@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#2459a8">
+  <meta name="description" content="用自然语言表达出行需求，查询有来源的站点资料，体验虚构街区内的无障碍路线规划。">
+  <title>出行助手 · AccessAI</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="assistant.css">
+  <script src="route-network.js" defer></script>
+  <script src="assistant.js" defer></script>
+</head>
+<body class="assistant-page">
+  <a class="skip-link" href="#request">跳到出行需求</a>
+  <header class="assistant-header">
+    <a class="brand" href="index.html"><img src="assets/favicon.svg" alt="">AccessAI<span>.</span></a>
+    <nav aria-label="出行工具"><a href="navigate.html#demo">路线体验</a><a href="index.html?view=real">真实站点</a><a href="index.html">返回首页</a></nav>
+  </header>
+  <main class="assistant-main">
+    <section class="assistant-intro" aria-labelledby="page-title">
+      <div><p class="eyebrow">ACCESSAI · 出行助手</p><h1 id="page-title">说说你想去哪里</h1><p class="intro-copy">说明你的通行需求，查看路线选择的依据，或查询真实站点的设施资料。</p></div>
+      <span id="connection-badge" class="connection-badge" role="status">正在检查服务</span>
+    </section>
+    <div class="assistant-grid">
+      <div class="assistant-workspace">
+        <section class="request-card" aria-labelledby="request-title">
+          <div class="request-heading"><h2 id="request-title">这次出行，需要什么帮助？</h2><span class="small-label">文字输入</span></div>
+          <form id="assistant-form">
+            <label class="sr-only" for="request">出行需求或站点问题</label>
+            <textarea id="request" name="message" rows="4" maxlength="1200" required placeholder="例如：我坐轮椅，从云桥路西侧人行道去商场，通道至少要 100 厘米宽。"></textarea>
+            <div class="composer-bottom"><span id="character-count">0 / 1200</span><span>对话仅保留在本次页面中</span></div>
+            <div id="service-note" class="service-note">正在检查 AI 接入状态…</div>
+            <div class="request-actions">
+              <button class="btn primary" id="send-live" type="submit" disabled>交给 AI 规划 / 查询</button>
+              <button class="btn" id="send-reference" type="button" disabled>规则演示（非 AI）</button>
+              <button class="text-btn" id="cancel-request" type="button" hidden>取消本次请求</button>
+            </div>
+          </form>
+          <p class="request-privacy">使用 AI 时，输入文字、同模式下的近期对话和所选演示条件会发送给已配置的模型服务。本页不获取你的真实位置。</p>
+          <details class="connection-help"><summary>连接与使用说明</summary><p>AI 需要通过项目本地服务运行，并由项目维护者配置模型。直接打开 HTML 时，可以继续使用原有路线体验和站点资料。切换运行模式时，两种模式的对话上下文分别保存。</p><button class="text-btn" id="check-connection" type="button">重新检查连接</button></details>
+        </section>
+        <section class="example-section" aria-labelledby="examples-title">
+          <h2 id="examples-title">从一个具体问题开始</h2>
+          <div class="example-grid">
+            <button class="example-button" data-example="route" type="button"><span>体验路线规划</span><strong>电梯停运了，怎样绕行？</strong><small>选择虚构起点与 100 厘米净宽需求</small></button>
+            <button class="example-button" data-example="station" type="button"><span>查询真实资料</span><strong>中环站的升降机在哪里？</strong><small>查看已收录资料、来源与待确认事项</small></button>
+          </div>
+        </section>
+        <section class="conversation-section" aria-labelledby="conversation-title">
+          <div class="conversation-heading"><h2 id="conversation-title">本次对话</h2><button class="text-btn" id="clear-conversation" type="button">清空对话</button></div>
+          <p id="empty-conversation" class="empty-conversation">结果会在这里显示。路线依据计算结果，站点回答附资料来源。</p>
+          <div id="conversation" aria-label="对话记录"></div>
+        </section>
+      </div>
+      <aside class="assistant-aside">
+        <details id="route-options" class="context-card" open>
+          <summary><span>路线偏好</span><small>仅作用于虚构街区规划</small></summary>
+          <div class="context-fields">
+            <label for="origin-id">从哪里出发</label><select id="origin-id"><option value="">未选择 · 可以用文字说明</option></select>
+            <label for="destination-id">想去哪里</label><select id="destination-id"><option value="">未选择 · 可以用文字说明</option></select>
+            <label for="minimum-width">通道最小净宽</label><select id="minimum-width"><option value="80">80 厘米 · 演示条件</option><option value="100">100 厘米 · 演示条件</option></select>
+            <label for="route-scenario">模拟设施状态</label><select id="route-scenario"></select>
+            <p class="context-note">净宽仅用于演示筛选，不是通行安全阈值。选择的偏好会随本次请求一起提交。</p>
+          </div>
+        </details>
+        <section class="scope-card" aria-labelledby="scope-title"><h2 id="scope-title">你会得到什么</h2><ol><li><span>01</span><div><strong>理解需求</strong><p>有缺失信息时继续确认。</p></div></li><li><span>02</span><div><strong>查看依据</strong><p>路线由规则计算，资料保留出处。</p></div></li><li><span>03</span><div><strong>继续下一步</strong><p>确认模拟起点后，进入分步指引。</p></div></li></ol></section>
+        <p class="scope-note"><strong>覆盖范围</strong>路线仅覆盖虚构云桥街区，不用于真实出行。真实站点资料可供查询，不提供实时电梯状态或完整导航。</p>
+      </aside>
+    </div>
+  </main>
+  <div class="sr-only" id="assistant-announcement" role="status" aria-live="polite" aria-atomic="true"></div>
+  <noscript><p>出行助手需要 JavaScript。请启用后通过本地服务打开页面。</p></noscript>
+</body>
+</html>

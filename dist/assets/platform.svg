@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">云桥站站台 E1 电梯位置示意</title>
+  <desc id="desc">从站台上的绿色通行指引沿平整地面向右前方，找到连接站台与站厅的 E1 电梯。左侧为列车，右侧为电梯门。此图为虚构场景示意。</desc>
+  <defs>
+    <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#f5f4ec"/><stop offset="1" stop-color="#e7ece3"/></linearGradient>
+    <linearGradient id="glass" x2="1" y2="1"><stop stop-color="#c3d9d1"/><stop offset="1" stop-color="#8eb3a7"/></linearGradient>
+    <linearGradient id="floor" x2="0" y2="1"><stop stop-color="#e4e8df"/><stop offset="1" stop-color="#f6f4ed"/></linearGradient>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto"><path d="M0 0 6 3 0 6" fill="none" stroke="#26745d" stroke-width="1.7"/></marker>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <circle cx="666" cy="74" r="121" fill="#e8eadf"/>
+  <path d="M57 318 332 185 744 306 478 445Z" fill="url(#floor)"/>
+  <path d="m332 185 412 121V122L332 34Z" fill="#dedfd3"/>
+  <path d="M332 34 57 155v163l275-133Z" fill="#f5f4eb"/>
+  <g stroke="#cbd3c7" fill="none"><path d="m195 251 423 117M120 287l426 118M411 209 144 359M512 238 254 399M622 270 370 435"/></g>
+  <path d="M57 301 332 175v10L57 318Z" fill="#dfb78b"/>
+  <g fill="#294d43">
+    <path d="m75 170 94-42v134l-94 43Z"/><path d="m181 122 93-41v134l-93 43Z"/>
+  </g>
+  <g fill="url(#glass)"><path d="m83 181 35-16v57l-35 16Z"/><path d="m126 162 35-16v57l-35 16Z"/><path d="m189 133 35-16v57l-35 16Z"/><path d="m232 114 34-15v57l-34 16Z"/></g>
+  <g stroke="#8fa79a" stroke-width="2"><path d="m122 151 0 129M228 104v129"/></g>
+  <path d="m55 238 230-105v7L55 245Z" fill="#8db8a5"/>
+  <path d="m418 96 210 48v158l-210-61Z" fill="#b2bdb0"/>
+  <path d="m432 108 182 42v137l-182-52Z" fill="#224d40"/>
+  <path d="m444 134 76 18v104l-76-22Z" fill="url(#glass)"/>
+  <path d="m525 153 76 18v108l-76-22Z" fill="#bfd6cb"/>
+  <path d="m451 146 61 15v19l-61-17Z" fill="#d7e7dc" opacity=".7"/>
+  <path d="m533 165 61 16v19l-61-18Z" fill="#e5eee4" opacity=".7"/>
+  <path d="m432 235 182 52-8 5-183-53Z" fill="#829f8f"/>
+  <path d="m449 82 151 35v28l-151-36Z" fill="#194e3c"/>
+  <text x="467" y="106" transform="rotate(13 467 106)" fill="#fffef5" font-family="Arial,sans-serif" font-size="17" font-weight="700">E1  ↑  B1</text>
+  <path d="m642 187 21 5v43l-21-6Z" fill="#eeeee3"/>
+  <circle cx="652" cy="205" r="3" fill="#26745d"/>
+  <circle cx="652" cy="217" r="3" fill="#b7beb0"/>
+  <path d="m283 366 110-54 75 20 68-36" fill="none" stroke="#c2dccc" stroke-width="29" stroke-linejoin="round"/>
+  <path d="m283 366 110-54 75 20 68-36" fill="none" stroke="#26745d" stroke-width="4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <g transform="translate(331 308)">
+    <circle r="22" fill="#fafbf3" stroke="#74a38d" stroke-width="2"/>
+    <circle cx="0" cy="-10" r="4" fill="#23644e"/>
+    <path d="M-1-3v11h10l5 8M0 2h9M-6 2a10 10 0 1 0 10 15" fill="none" stroke="#23644e" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(42 32)"><rect width="123" height="31" rx="15.5" fill="#fffef7" stroke="#d7ded1"/><circle cx="18" cy="15.5" r="4" fill="#4c8d6d"/><text x="31" y="21" fill="#3d5d4c" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="12">B2 · 站台层</text></g>
+  <g transform="translate(553 330)"><rect width="192" height="48" rx="10" fill="#fffef8" stroke="#d2dacc"/><text x="16" y="20" fill="#244f3e" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="13" font-weight="600">E1 无障碍电梯</text><text x="16" y="37" fill="#617367" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="11">站台 → 站厅</text></g>
+  <text x="42" y="421" fill="#69796a" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="12" letter-spacing="2">场景示意</text>
+</svg>

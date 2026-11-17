@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#2459a8">
+  <meta name="description" content="从当前位置开始的无障碍出行规划体验。支持浏览器定位、覆盖不足提示，以及虚构路网内的任意起点规划。">
+  <title>从这里出发 · AccessAI</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="navigation.css">
+  <script src="route-network.js" defer></script>
+  <script src="navigator.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#planner">跳到路线规划</a>
+  <div id="navigator"></div>
+  <div id="nav-status" class="sr-only" aria-live="polite"></div>
+  <noscript>此规划体验需要 JavaScript。浏览器定位需要你的许可；当前尚未接入真实无障碍路网。</noscript>
+</body>
+</html>

@@ -1,0 +1,11 @@
+node_modules/
+artifacts/
+*.tar.gz
+*.tgz
+.sites-workflow/
+.env
+.env.*
+!.env.example
+*.log
+docs/competition/.build-deps/
+docs/competition/.build-cache/

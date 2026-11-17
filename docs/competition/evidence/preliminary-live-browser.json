@@ -1,0 +1,41 @@
+{
+  "checkedAt": "2026-11-17T15:01:36.661Z",
+  "scope": "Real browser, local HTTP server, and configured model API. One user request. Synthetic route only; no GPS or real travel verification.",
+  "model": "qwen-plus",
+  "passed": true,
+  "results": [
+    {
+      "name": "Assistant enables real AI submission with local configuration",
+      "passed": true
+    },
+    {
+      "name": "Real model calls route tool and browser shows 890 metre route with 100 cm constraint",
+      "passed": true
+    },
+    {
+      "name": "Navigation preserves computed conditions and requires simulated origin confirmation",
+      "passed": true
+    },
+    {
+      "name": "Confirmed route starts landmark guidance without GPS or additional AI requests",
+      "passed": true
+    }
+  ],
+  "providerStatuses": [
+    200,
+    200
+  ],
+  "providerAttempts": 2,
+  "providerNetworkErrors": [],
+  "apiResponses": [
+    200
+  ],
+  "userRequestCount": 1,
+  "browserRuntimeErrorCount": 0,
+  "blockedExternalBrowserRequestCount": 0,
+  "screenshots": [
+    "live-assistant-route.png",
+    "live-navigation-guide.png"
+  ],
+  "finishedAt": "2026-11-17T15:01:49.767Z"
+}

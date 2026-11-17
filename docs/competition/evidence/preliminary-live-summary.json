@@ -1,0 +1,42 @@
+{
+  "checkedAt": "2026-11-17T15:03:06.192Z",
+  "model": "qwen-plus",
+  "apiScenarios": {
+    "passed": 3,
+    "total": 3,
+    "providerResponses": [
+      200,
+      200,
+      200,
+      200,
+      200,
+      200
+    ],
+    "report": "live-api-check.json"
+  },
+  "browser": {
+    "passed": true,
+    "checks": 4,
+    "userRequests": 1,
+    "providerResponses": [
+      200,
+      200
+    ],
+    "report": "live-browser-check.json"
+  },
+  "earlierBrowserAttempts": [
+    {
+      "checkedAt": "2026-11-17T14:57:38.341Z",
+      "outcome": "No completed answer observed before test timeout. One browser POST; no upstream response status captured. Original diagnostics cannot distinguish an application rejection from a provider network failure."
+    },
+    {
+      "checkedAt": "2026-11-17T14:59:59.082Z",
+      "outcome": "Application returned HTTP 200 and both provider requests returned 200. Test assertion incorrectly expected the in-flight badge after completion; corrected to the actual completed-state label."
+    }
+  ],
+  "limits": [
+    "Small synthetic functional smoke check, not a reliability benchmark.",
+    "Routes still use the fictional demo graph; station records do not provide real-time equipment status."
+  ],
+  "credentials": "Kept in ignored local .env; not included in reports or browser pages."
+}

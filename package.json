@@ -1,6 +1,6 @@
 {
   "name": "accessai-competition-prototype",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "private": true,
   "description": "Accessible travel prototype with auditable AI tool calls and source-grounded station retrieval",
   "engines": { "node": ">=20.12.0" },

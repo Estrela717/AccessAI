@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-11-17T16:13:33.382Z",
+  "httpStatus": 200,
+  "elapsedMs": 5753,
+  "model": "qwen-plus",
+  "passed": true,
+  "tool": [
+    {
+      "tool": "plan_accessible_route",
+      "label": "按净宽与设施状态计算路径",
+      "status": "ok"
+    }
+  ],
+  "routeDistance": 560,
+  "errorCode": null
+}

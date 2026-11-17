@@ -1,0 +1,84 @@
+{
+  "startedAt": "2026-11-17T16:02:39.803Z",
+  "model": "qwen-plus",
+  "provider": "Alibaba Cloud Bailian / Beijing",
+  "datasetVersion": "1.0",
+  "assessmentVersion": "1.1",
+  "protocol": "1 fixed synthetic requests, one sequential attempt each, no automatic retry; application HTTP/SSE plus real model function calls.",
+  "limitations": [
+    "This fixed-set pass rate is not general model accuracy or an uptime estimate.",
+    "Conversation history in history-width is a declared synthetic fixture.",
+    "Checks primarily verify tools, source identity, constraints and conservative boundaries; they do not exhaustively verify natural-language factual accuracy.",
+    "No real routes, GPS, equipment status, or wheelchair user study are evaluated."
+  ],
+  "results": [
+    {
+      "id": "unsupported-width",
+      "category": "约束边界",
+      "input": {
+        "message": "从西侧人行道去商场，需要至少120厘米净宽，请帮我规划。",
+        "history": [],
+        "context": {
+          "originId": "west",
+          "destinationId": "mall",
+          "minWidth": 100,
+          "scenario": "normal"
+        },
+        "mode": "live"
+      },
+      "expected": {
+        "type": "unsupported",
+        "description": "说明当前只支持80/100厘米演示档，不擅自降低120厘米要求。"
+      },
+      "providerCalls": [
+        {
+          "httpStatus": 200,
+          "elapsedMs": 3358,
+          "usage": {
+            "prompt_tokens": 1070,
+            "completion_tokens": 110,
+            "total_tokens": 1180
+          },
+          "finishReason": "stop",
+          "tools": []
+        }
+      ],
+      "passed": true,
+      "httpStatus": 200,
+      "actual": {
+        "answer": "此次尚无可核验的路线或资料结果。当前演示只支持 80 或 100 厘米两档净宽，不能擅自降低或替换你的需求。请确认支持的演示条件；此处不判断现实通行安全。",
+        "trace": [],
+        "sources": [],
+        "route": null
+      },
+      "checks": [
+        {
+          "name": "返回真实AI模式及非空回答",
+          "passed": true
+        },
+        {
+          "name": "没有降低要求生成路线",
+          "passed": true
+        },
+        {
+          "name": "说明支持的净宽边界",
+          "passed": true
+        }
+      ],
+      "elapsedMs": 3429
+    }
+  ],
+  "providerCallCount": 1,
+  "finishedAt": "2026-11-17T16:02:43.295Z",
+  "summary": {
+    "attempted": 1,
+    "passed": 1,
+    "failed": 0,
+    "fixedSetPassRate": 1,
+    "meanLatencyMs": 3429,
+    "p95LatencyMs": 3429,
+    "promptTokens": 1070,
+    "completionTokens": 110,
+    "providerCallCount": 1
+  }
+}

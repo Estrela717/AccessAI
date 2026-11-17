@@ -1,0 +1,107 @@
+{
+  "preparedAt": "2026-11-17T16:13:07.592Z",
+  "model": "qwen-plus",
+  "baseline": {
+    "file": "model-evaluation.json",
+    "attempted": 20,
+    "passed": 17,
+    "failed": 3,
+    "fixedSetPassRate": 0.85,
+    "meanLatencyMs": 4671,
+    "p95LatencyMs": 7298,
+    "promptTokens": 48276,
+    "completionTokens": 3727,
+    "providerCallCount": 33
+  },
+  "initialEvaluator": {
+    "file": "model-evaluation-initial-assessment.json",
+    "passed": 13,
+    "failed": 7,
+    "note": "Six false negatives were corrected offline for equivalent citations and explicit no-data wording; two additional factual-prose failures were found during Codex-assisted review, leaving 17/20."
+  },
+  "fixes": [
+    {
+      "issue": "Unsupported 120 cm demand received a generic no-result answer when the model did not call a tool.",
+      "change": "Deterministic fallback explains the supported 80/100 cm demo conditions without lowering the demand."
+    },
+    {
+      "issue": "Two otherwise valid route answers invented a minimum width of 150 cm and one misread synthetic edge length as vertical elevator height.",
+      "change": "Successful route text is generated from verified tool data; model prose cannot override distance, width, facilities or the next step."
+    },
+    {
+      "issue": "Code review of the new deterministic formatter found that an already-arrived route has no edges.",
+      "change": "An explicit arrived message avoids a fictitious infinite minimum width; covered by a local mock regression, without another paid model call."
+    }
+  ],
+  "rechecks": [
+    {
+      "id": "unsupported-width",
+      "file": "model-evaluation-recheck-unsupported-width.json",
+      "attempted": 1,
+      "passed": 1,
+      "failed": 0,
+      "fixedSetPassRate": 1,
+      "meanLatencyMs": 3429,
+      "p95LatencyMs": 3429,
+      "promptTokens": 1070,
+      "completionTokens": 110,
+      "providerCallCount": 1
+    },
+    {
+      "id": "route-normal",
+      "file": "model-evaluation-recheck-route-normal.json",
+      "attempted": 1,
+      "passed": 1,
+      "failed": 0,
+      "fixedSetPassRate": 1,
+      "meanLatencyMs": 8003,
+      "p95LatencyMs": 8003,
+      "promptTokens": 3416,
+      "completionTokens": 309,
+      "providerCallCount": 2
+    },
+    {
+      "id": "route-width-100",
+      "file": "model-evaluation-recheck-route-width-100.json",
+      "attempted": 1,
+      "passed": 1,
+      "failed": 0,
+      "fixedSetPassRate": 1,
+      "meanLatencyMs": 6764,
+      "p95LatencyMs": 6764,
+      "promptTokens": 3421,
+      "completionTokens": 257,
+      "providerCallCount": 2
+    },
+    {
+      "id": "route-lift-closed",
+      "file": "model-evaluation-recheck-route-lift-closed.json",
+      "attempted": 1,
+      "passed": 1,
+      "failed": 0,
+      "fixedSetPassRate": 1,
+      "meanLatencyMs": 5904,
+      "p95LatencyMs": 5904,
+      "promptTokens": 3728,
+      "completionTokens": 225,
+      "providerCallCount": 2
+    }
+  ],
+  "regression": {
+    "suite": "node --test tests/ai.test.cjs",
+    "passed": 30,
+    "failed": 0,
+    "usesRealModel": false
+  },
+  "usageAcrossThisEvaluationAndRechecks": {
+    "providerCalls": 40,
+    "promptTokens": 59911,
+    "completionTokens": 4628
+  },
+  "interpretation": "Report the initial fixed-set result as 17/20 and the four targeted post-fix rechecks as 4/4. The complete 20-case set was not rerun after the fixes. These values are not general model accuracy, human user validation, or reliability guarantees.",
+  "remaining": [
+    "Unknown-station and other no-tool refusals remain conservative but generic.",
+    "Station answer factual quality still requires broader evaluation against source excerpts.",
+    "No real route or current equipment status has been validated."
+  ]
+}

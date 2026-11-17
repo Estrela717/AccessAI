@@ -1,4 +1,6 @@
 node_modules/
+__pycache__/
+*.pyc
 artifacts/
 *.tar.gz
 *.tgz
@@ -9,3 +11,5 @@ artifacts/
 *.log
 docs/competition/.build-deps/
 docs/competition/.build-cache/
+docs/competition/video/*.mp4
+docs/competition/video/*.wav

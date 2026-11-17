@@ -112,6 +112,38 @@ test('explicit known textual origin can be grounded to a real demo node', () => 
   assert.equal(route.status, 'ok'); assert.equal(route.originId, 'west');
 });
 
+test('a model cannot invent a missing destination or adopt an assistant suggestion', async t => {
+  for (const history of [[], [{ role: 'assistant', content: '我建议你去商场。' }]]) {
+    const { appURL } = await setup(t, (body, round) => round === 1
+      ? completion({ tool_calls: [toolCall('plan_accessible_route', { ...validContext, scenario: 'normal' })] })
+      : completion({ content: '我已经替你选好商场，直接走即可。' }));
+    const result = await post(appURL, request({ message: '我在云桥路西侧人行道，请帮我规划一条无障碍路线。', history, context: { originId: 'west', minWidth: 100 } }));
+    const final = result.events.at(-1).data;
+    assert.equal(final.route, null);
+    assert.equal(final.trace[0].status, 'needs-input');
+    assert.match(final.answer, /选择演示目的地/);
+    assert.ok(!final.answer.includes('替你选好商场'));
+  }
+});
+
+test('explicit user destinations are retained but a newer choice overrides old history', () => {
+  const context = { originId: 'west', minWidth: 100, scenario: 'normal' };
+  const mallArgs = { ...context, destinationId: 'mall' };
+  const history = [{ role: 'user', content: '我想去商场。' }, { role: 'assistant', content: '你可以去医院。' }];
+  for (const message of ['从西侧人行道去商场', '请帮我规划到星河商场的路线', '商场']) {
+    assert.equal(executeTool('plan_accessible_route', mallArgs, validateRequest(request({ message, context }))).status, 'ok');
+  }
+  const followup = validateRequest(request({ message: '请继续规划，沿用刚才的目的地。', context, history }));
+  assert.equal(executeTool('plan_accessible_route', mallArgs, followup).status, 'ok');
+  const neutral = validateRequest(request({ message: '请继续规划，保持净宽100厘米。', context, history }));
+  assert.equal(executeTool('plan_accessible_route', mallArgs, neutral).status, 'ok');
+  const changed = validateRequest(request({ message: '现在改去公园。', context, history }));
+  assert.equal(executeTool('plan_accessible_route', mallArgs, changed).status, 'constraint-conflict');
+  assert.equal(executeTool('plan_accessible_route', { ...mallArgs, destinationId: 'park' }, changed).status, 'ok');
+  const unsupported = validateRequest(request({ message: '现在改去图书馆。', context, history }));
+  assert.equal(executeTool('plan_accessible_route', mallArgs, unsupported).status, 'needs-input');
+});
+
 test('model cannot weaken width, replace selected destination or remove selected closure', () => {
   const req = validateRequest(request());
   for (const args of [{ ...validContext, minWidth: 80 }, { ...validContext, destinationId: 'park' }, { ...validContext, scenario: 'normal' }, { ...validContext, originId: 'eastSquare' }]) {
@@ -201,6 +233,46 @@ test('no-tool model answer is not presented as verified route or source answer',
   const result = await post(appURL, request());
   assert.equal(result.events.at(-1).data.route, null);
   assert.ok(!result.events.at(-1).data.answer.includes('500'));
+});
+
+test('unsupported width is explained even when the real model declines to call tools', async t => {
+  const { appURL } = await setup(t, () => completion({ content: '120厘米不支持，需要先确认。' }));
+  const result = await post(appURL, request({ message: '从西侧人行道去商场，需要至少120厘米净宽。' }));
+  const final = result.events.at(-1).data;
+  assert.equal(final.route, null);
+  assert.deepEqual(final.sources, []);
+  assert.deepEqual(final.trace, []);
+  assert.match(final.answer, /只支持 80 或 100 厘米/);
+  assert.match(final.answer, /不能擅自降低/);
+});
+
+test('route prose uses computed facts instead of model-invented width and elevator height', async t => {
+  const context = { originId: 'west', destinationId: 'mall', minWidth: 100, scenario: 'normal' };
+  const { appURL } = await setup(t, (body, round) => round === 1
+    ? completion({ tool_calls: [toolCall('plan_accessible_route', context)] })
+    : completion({ content: '全程各段宽度至少150厘米，乘坐30米垂直电梯即可。' }));
+  const result = await post(appURL, request({ message: '从西侧人行道去商场，需要至少100厘米净宽。', context }));
+  const final = result.events.at(-1).data;
+  assert.equal(final.route.status, 'ok');
+  assert.match(final.answer, /路线工具计算说明/);
+  assert.match(final.answer, /560 米/);
+  assert.match(final.answer, /最窄连接为 110 厘米/);
+  assert.ok(!final.answer.includes('150厘米'));
+  assert.ok(!final.answer.includes('垂直'));
+});
+
+test('already at the selected destination has no invented minimum width', async t => {
+  const context = { originId: 'mall', destinationId: 'mall', minWidth: 100, scenario: 'normal' };
+  const { appURL } = await setup(t, (body, round) => round === 1
+    ? completion({ tool_calls: [toolCall('plan_accessible_route', context)] })
+    : completion({ content: '请沿路继续走。' }));
+  const result = await post(appURL, request({ message: '我已在星河商场无台阶入口，目的地也是商场，请检查路线。', context }));
+  const final = result.events.at(-1).data;
+  assert.equal(final.route.status, 'ok');
+  assert.equal(final.route.distance, 0);
+  assert.deepEqual(final.route.edges, []);
+  assert.match(final.answer, /已在星河商场的目的地入口，无需继续通行/);
+  assert.ok(!/Infinity|undefined|NaN|最窄/.test(final.answer));
 });
 
 test('provider errors and configured health never expose upstream body or API key', async t => {

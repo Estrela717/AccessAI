@@ -1,0 +1,142 @@
+{
+  "startedAt": "2026-11-17T16:06:48.487Z",
+  "model": "qwen-plus",
+  "provider": "Alibaba Cloud Bailian / Beijing",
+  "datasetVersion": "1.0",
+  "assessmentVersion": "1.1",
+  "protocol": "1 fixed synthetic requests, one sequential attempt each, no automatic retry; application HTTP/SSE plus real model function calls.",
+  "limitations": [
+    "This fixed-set pass rate is not general model accuracy or an uptime estimate.",
+    "Conversation history in history-width is a declared synthetic fixture.",
+    "Checks primarily verify tools, source identity, constraints and conservative boundaries; they do not exhaustively verify natural-language factual accuracy.",
+    "No real routes, GPS, equipment status, or wheelchair user study are evaluated."
+  ],
+  "results": [
+    {
+      "id": "route-lift-closed",
+      "category": "路线规划",
+      "input": {
+        "message": "从西侧人行道去商场，通道净宽至少100厘米，E4电梯停运，请规划演示路线。",
+        "history": [],
+        "context": {
+          "originId": "west",
+          "destinationId": "mall",
+          "minWidth": 100,
+          "scenario": "liftClosed"
+        },
+        "mode": "live"
+      },
+      "expected": {
+        "type": "route",
+        "minWidth": 100,
+        "scenario": "liftClosed",
+        "distance": 890,
+        "description": "890米绕行，排除E4、台阶、未知及宽度不足路段。"
+      },
+      "providerCalls": [
+        {
+          "httpStatus": 200,
+          "elapsedMs": 1407,
+          "usage": {
+            "prompt_tokens": 1078,
+            "completion_tokens": 44,
+            "total_tokens": 1122
+          },
+          "finishReason": "tool_calls",
+          "tools": [
+            {
+              "name": "plan_accessible_route",
+              "arguments": "{\"originId\": \"west\", \"destinationId\": \"mall\", \"minWidth\": 100, \"scenario\": \"liftClosed\"}"
+            }
+          ]
+        },
+        {
+          "httpStatus": 200,
+          "elapsedMs": 4428,
+          "usage": {
+            "prompt_tokens": 2650,
+            "completion_tokens": 181,
+            "total_tokens": 2831
+          },
+          "finishReason": "stop",
+          "tools": []
+        }
+      ],
+      "passed": true,
+      "httpStatus": 200,
+      "actual": {
+        "answer": "以下为路线工具计算说明（虚构街区）：\n云桥路西侧人行道 → 星河商场\n约 890 米，共 8 个路段连接。\n通道净宽要求：至少 100 厘米；本路线最窄连接为 140 厘米。\n模拟状态：E4 电梯停运。\n计算已排除台阶、未知连接、宽度不足及当前场景停用的路段。\n下一步：沿云桥路西段人行道，约 150 米，到达云桥路西路口。\n请核对路线卡片，确认模拟起点后查看完整分步指引。此结果不用于真实出行。",
+        "trace": [
+          {
+            "tool": "plan_accessible_route",
+            "label": "按净宽与设施状态计算路径",
+            "status": "ok"
+          }
+        ],
+        "sources": [],
+        "route": {
+          "status": "ok",
+          "originId": "west",
+          "input": {
+            "x": 100,
+            "y": 380,
+            "destinationId": "mall",
+            "minWidth": 100,
+            "scenario": "liftClosed"
+          },
+          "distance": 890,
+          "edgeIds": [
+            "west-path",
+            "central-path",
+            "lift-approach",
+            "ramp-approach",
+            "east-ramp",
+            "ramp-exit",
+            "lift-exit",
+            "mall-entry"
+          ]
+        }
+      },
+      "checks": [
+        {
+          "name": "返回真实AI模式及非空回答",
+          "passed": true
+        },
+        {
+          "name": "实际调用路线工具且成功",
+          "passed": true
+        },
+        {
+          "name": "起终点及通行条件正确",
+          "passed": true
+        },
+        {
+          "name": "距离符合固定演示路网",
+          "passed": true
+        },
+        {
+          "name": "路段已知无台阶且满足净宽与停运条件",
+          "passed": true
+        },
+        {
+          "name": "路线事实说明来自确定性工具",
+          "passed": true
+        }
+      ],
+      "elapsedMs": 5904
+    }
+  ],
+  "providerCallCount": 2,
+  "finishedAt": "2026-11-17T16:06:54.452Z",
+  "summary": {
+    "attempted": 1,
+    "passed": 1,
+    "failed": 0,
+    "fixedSetPassRate": 1,
+    "meanLatencyMs": 5904,
+    "p95LatencyMs": 5904,
+    "promptTokens": 3728,
+    "completionTokens": 225,
+    "providerCallCount": 2
+  }
+}

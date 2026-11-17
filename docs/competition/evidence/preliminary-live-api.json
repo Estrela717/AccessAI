@@ -1,0 +1,121 @@
+{
+  "checkedAt": "2026-11-17T14:53:24.482Z",
+  "model": "qwen-plus",
+  "scope": "Live provider through the application HTTP/SSE endpoint using synthetic demo questions.",
+  "results": [
+    {
+      "name": "Hong Kong station retrieval with official source citations",
+      "elapsedMs": 7486,
+      "httpStatus": 200,
+      "passed": true,
+      "trace": [
+        {
+          "tool": "search_station_knowledge",
+          "label": "检索已保存的官方站点资料",
+          "status": "ok"
+        }
+      ],
+      "sourceIds": [
+        "hk-hong-kong-4",
+        "hk-hong-kong-1",
+        "hk-hong-kong-2",
+        "hk-hong-kong-3"
+      ],
+      "answer": "香港站（东涌线、机场快线）无障碍设施包括：宽闸机、便携式或活动坡板、闸外无障碍洗手间、电动轮椅充电插座，以及A/E出口处的闸外升降机 [hk-hong-kong-4][hk-hong-kong-1]。ITCI Drop Off 也被列为一处无障碍上落客点，但其具体街面位置未核验 [hk-hong-kong-2]。\n\n需注意：  \n- 站内付费区升降机信息缺失（标注为“—”），无法确认站台至站厅是否全程无台阶 [hk-hong-kong-3]；  \n- 所有设施状态（如电梯是否运行）、门宽、坡度、站台间隙及通往设施的连续通行条件，均未经现场核验，须向港铁运营方实时确认 [全部片段]。  \n\n信息来源均为港铁官网无障碍设施搜索页（https://www.mtr.com.hk/en/customer/services/free_search.php?query_type=search&station=44），检索日期为2026-11-17。",
+      "routeStatus": null,
+      "routeDistance": null
+    },
+    {
+      "name": "100 cm route avoids closed E4 lift",
+      "elapsedMs": 9159,
+      "httpStatus": 200,
+      "passed": true,
+      "trace": [
+        {
+          "tool": "plan_accessible_route",
+          "label": "按净宽与设施状态计算路径",
+          "status": "ok"
+        }
+      ],
+      "sourceIds": [],
+      "answer": "已为您规划从云桥路西侧人行道到星河商场的无障碍路线（E4电梯停运，通道净宽≥100cm）：\n\n✅ 全程890米，共8段，均为无台阶路径  \n✅ 所有路段宽度 ≥ 140cm，满足100cm净宽要求  \n✅ 关键替代设施：使用东侧无台阶坡道（100米长）绕过停运的E4电梯  \n\n📌 路线概要：  \n1. 沿云桥路西段人行道 → 云桥路西路口（150m）  \n2. 继续沿中段人行道 → 云桥路中段（180m）  \n3. 向南转入升降设施南侧通道 → E4升降连接南侧（80m）  \n4. 接入东侧坡道引道 → 东侧坡道南端（130m）  \n5. 上东侧无台阶坡道 → 东侧坡道北端（100m）  \n6. 北侧连接通道 → E4升降连接北侧（130m）  \n7. 升降北侧通道 → 商场入口前通道（40m）  \n8. 平层入口通道 → 星河商场无台阶入口（80m）  \n\n⚠️ 注意：此为虚构云桥街区演示路线，不反映真实道路状况或实时设施状态。",
+      "routeStatus": "ok",
+      "routeDistance": 890
+    },
+    {
+      "name": "Hospital construction returns no route",
+      "elapsedMs": 4302,
+      "httpStatus": 200,
+      "passed": true,
+      "trace": [
+        {
+          "tool": "plan_accessible_route",
+          "label": "按净宽与设施状态计算路径",
+          "status": "no-route"
+        }
+      ],
+      "sourceIds": [],
+      "answer": "路线未能规划：医院入口连接通道正在模拟施工，其他连接尚未核验，当前没有可用路线。",
+      "routeStatus": "no-route",
+      "routeDistance": null
+    }
+  ],
+  "providerCalls": [
+    {
+      "status": 200,
+      "elapsedMs": 1676,
+      "usage": {
+        "prompt_tokens": 1061,
+        "completion_tokens": 25,
+        "total_tokens": 1086
+      }
+    },
+    {
+      "status": 200,
+      "elapsedMs": 5706,
+      "usage": {
+        "prompt_tokens": 2075,
+        "completion_tokens": 242,
+        "total_tokens": 2317
+      }
+    },
+    {
+      "status": 200,
+      "elapsedMs": 1562,
+      "usage": {
+        "prompt_tokens": 1083,
+        "completion_tokens": 44,
+        "total_tokens": 1127
+      }
+    },
+    {
+      "status": 200,
+      "elapsedMs": 7581,
+      "usage": {
+        "prompt_tokens": 2655,
+        "completion_tokens": 324,
+        "total_tokens": 2979
+      }
+    },
+    {
+      "status": 200,
+      "elapsedMs": 2695,
+      "usage": {
+        "prompt_tokens": 1072,
+        "completion_tokens": 97,
+        "total_tokens": 1169
+      }
+    },
+    {
+      "status": 200,
+      "elapsedMs": 1595,
+      "usage": {
+        "prompt_tokens": 1358,
+        "completion_tokens": 55,
+        "total_tokens": 1413
+      }
+    }
+  ],
+  "passed": 3,
+  "expected": 3
+}

@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-11-17T16:24:34.897Z",
+  "runtime": "v24.11.0",
+  "source": "Current reviewed working tree; copies tracked and non-ignored source.",
+  "credentialsIncluded": false,
+  "copiedFileCount": 76,
+  "passed": true,
+  "tests": {
+    "total": 56,
+    "passed": 56,
+    "failed": 0
+  },
+  "startup": {
+    "pageStatus": 200,
+    "configuredWithoutCredentials": false,
+    "referenceRouteMetres": 890,
+    "liveWithoutCredentialsStatus": 503,
+    "environmentFileStatus": 403
+  }
+}

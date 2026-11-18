@@ -1,11 +1,50 @@
 {
-  "pages": 8,
-  "fileBytes": 132589,
-  "sha256": "1f85f67e420312bc576766b0785b1222e84a4af77a929c215d612f8095606c63",
-  "renderedPages": 8,
-  "visualReview": "All eight pages reviewed across final revisions; no clipped text, missing glyphs, overflow tables or orphan pages.",
+  "checkedAt": "2026-11-18T14:24:56+08:00",
+  "pages": 11,
+  "fileBytes": 536955,
+  "sha256": "47619fdf8e8324b80b70d0ae9142ad9abe16c6dd99862ce12bd90efed1043237",
+  "renderedPages": 11,
+  "renderDpi": 110,
+  "renderPrefix": "docs/competition/preview/final-form-",
+  "visualReview": "All 11 final PDF pages rendered with Poppler and individually inspected; no clipped text, missing glyphs, overflow tables or orphan pages. Four original 1920x1080 recording frames included with readable explanatory captions; source images preserved for zoomed inspection.",
   "includesConfirmedTeam": true,
   "includesRepository": true,
   "retainsEvaluationFailures": true,
-  "status": "Ready for participant review; competition submission not performed."
+  "includesSubmissionRequirementIndex": true,
+  "requirementPages": {
+    "projectDetailsAndUse": [
+      1,
+      2,
+      5,
+      7
+    ],
+    "highlights": [
+      8
+    ],
+    "aiImplementationAndTesting": [
+      4,
+      6
+    ],
+    "keyTechnology": [
+      3,
+      4,
+      5
+    ],
+    "projectImages": [
+      9,
+      10
+    ],
+    "previousPublicationAndAwards": [
+      11
+    ],
+    "existingProjectImprovements": [
+      11
+    ]
+  },
+  "screenshotCount": 4,
+  "screenshotCopiesMatchOriginalFrames": true,
+  "submissionDeadline": "2026-11-18T15:00:00+08:00",
+  "submissionRequirementsSource": "Participant-provided provincial final submission form screenshot, 2026-11-18",
+  "pdfUnder100MB": true,
+  "status": "Ready for participant review; cloud package link and public video link remain to be filled; competition submission not performed."
 }

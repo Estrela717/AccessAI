@@ -21,7 +21,7 @@ from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import ParagraphStyle
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, PageBreak, Flowable
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, PageBreak, Flowable, Image
 
 OUT = HERE / 'AccessAI-technical-report.pdf'
 FONT_PATH = Path('C:/Windows/Fonts/simhei.ttf')
@@ -82,6 +82,12 @@ def callout(label, text):
     t.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,-1),PALE),('BOX',(0,0),(-1,-1),0.7,LINE),('LEFTPADDING',(0,0),(-1,-1),14),('RIGHTPADDING',(0,0),(-1,-1),14),('BOTTOMPADDING',(0,-1),(-1,-1),10)]))
     story.extend([t,Spacer(1,12)])
 def page(): story.append(PageBreak())
+def screenshot(filename, caption):
+    image = Image(str(HERE / 'screenshots' / filename), width=WIDTH, height=WIDTH * 9 / 16)
+    image.hAlign = 'LEFT'
+    story.append(image)
+    story.append(Spacer(1, 5))
+    p(caption, 'small')
 
 class Architecture(Flowable):
     def __init__(self): super().__init__(); self.width=WIDTH; self.height=184
@@ -104,21 +110,22 @@ class Architecture(Flowable):
 
 # 1. Cover and project overview.
 p('2026 第九届传智杯 · AI WEB 网页开发挑战赛', 'small')
-story.append(Spacer(1,35))
+story.append(Spacer(1,15))
 p('AccessAI', 'hero')
 p('面向轮椅出行的\n可解释 AI 规划助手'.replace('\n','<br/>'), 'subtitle')
-p('技术文档 · 参赛交付版', 'h2')
+p('作品介绍与技术报告', 'h2')
 p(f"版本：{team['version']}  |  文档日期：{verify['date']}", 'small')
 story.append(Spacer(1,12))
 callout('真实模型已接入，结果可追溯', '已接入阿里云百炼北京地域 qwen-plus，完成真实工具调用和网页流程验证。模型理解需求并选择工具，路线说明从工具事实生成，站点回答依据检索片段。当前路线仍为虚构数据；实时设施状态、真实路线与现场用户验证未完成。')
-p('项目围绕轮椅使用者出行最后一段的实际困难展开：入口难找、设施信息分散、路径条件不清，以及受阻后缺少可解释的下一步。系统让自然语言需求进入已有的确定性寻路与资料查询流程，并将结果转化为来源清楚、可继续操作的网页卡片。')
+p('项目面向轮椅使用者找入口、查设施和受阻改道的任务，将自然语言需求接入确定性寻路与资料查询，并生成来源清楚、可继续操作的网页卡片。')
 table(['提交信息','填写内容'],[
+    ['团队名称',team.get('teamName', 'Estrela717')],
     ['参赛学校 / 组别',f"{team['school']} / {team['group']}"],
     ['成员 / 指导教师',f'{member_names}（单人参赛） / {advisor_names}'],
     ['代码仓库',repository],
     ['材料状态',team.get('submissionStatus', '尚未在赛事个人中心提交')],
 ],[130,WIDTH-130])
-p('本文不包含未经验证的准确率、用户增长、现场可达性或获奖承诺。', 'small')
+p('七项要求索引：①项目详情与使用，第 1-2、5、7 页；②项目亮点，第 8 页；③AI 技术落地及测试，第 4、6 页；④关键技术，第 3-5 页；⑤项目图片，第 9-10 页；⑥此前发表获奖，第 11 页；⑦基于既有项目的优化，第 11 页。', 'small')
 page()
 
 # 2. Requirements.
@@ -231,23 +238,53 @@ p('开发使用 Codex 等 AI 辅助工具。曲珈莹单人负责项目实现与
 page()
 
 # 8. Innovation and references.
-title('08','创新点、限制与提交核对')
+title('08','项目亮点、限制与提交核对')
 h('可解释的无障碍任务流程')
 p('应用创新在于将入口、设施状态与通行条件集中到轮椅出行的具体任务中。技术方案将语言理解、资料检索、确定性路由和可操作界面连接起来：用户可表达需求，系统可解释选择依据，并在缺数据时停止推断。创新程度与效果仍应通过对比任务和目标用户验证证明。')
 h('后续优先验证')
 p('先在一个车站或校园片区采集连续路径、方向、门宽、坡度和核验时间；邀请轮椅使用者完成找入口与受阻改道任务。随后接入有来源、有有效期的设施事件。扩大城市覆盖应建立在可维护的数据与验证流程之上。')
 table(['必须材料','提交前动作'],[
-    ['代码仓库','提供 GitHub/Gitee 评审访问权限；保留真实提交历史，清除密钥与临时依赖。'],
-    ['README / 配置','已列团队、架构、运行、依赖和环境变量模板；最终包按说明在干净目录复现。'],
-    ['演示视频',team.get('videoStatus', '制作中') + '；要求 5-8 分钟、MP4、至少 1080p、普通话讲解。'],
-    ['技术 PDF','本报告含已确认团队、模型选择与证据；随最终版本一致更新，不超过 30 页。'],
-    ['时间与入口','官网列 2026-11-18；作品指导与最终提交表述并存，以个人中心当前通知核对。'],
+    ['完整项目包','上传完整交付包至网盘并填写链接；含源码、README、配置模板与材料，不含密钥。仓库地址见封面。'],
+    ['演示视频','已制作 7 分 03 秒、1080p MP4，普通话 AI 合成旁白；待参赛者审看并发布至 B 站、抖音等公开视频平台，提交公开视频链接，不使用网盘链接。'],
+    ['作品介绍 PDF','本报告对应七项介绍要求；表单只上传 1 个 PDF，文件不超过 100 MB。'],
+    ['截止与状态','省赛表单截止：北京时间 2026-11-18 15:00。网盘及公开视频链接待填写，赛事个人中心 / 表单尚未提交。'],
 ],[100,WIDTH-100])
+p('本页提交规则依据：参赛者于 2026-11-18 提供的省赛最终提交表截图；其具体入口与限制优先于早期准备清单。', 'small')
 h('参考资料与实现依据')
 p('1. 传智杯 AI WEB 网页开发挑战赛：选题、评分、技术环境及提交要求。<br/><link href="https://www.boxuegu.com/matchTrack/detail/?id=10037" color="#2459A8">https://www.boxuegu.com/matchTrack/detail/?id=10037</link>', 'small')
 p('2. 深圳地铁与港铁官方设施资料：详细原文 URL、读取方式与检索日期见项目 REAL-DATA-SOURCES.md 和 dist/real-data.js。检索日期为 2026-11-17，不代表源更新时间或现场核验时间。', 'small')
 p('3. 项目实现与验证：server.cjs、lib/、dist/route-network.js、tests/；本文测试记录读取同目录 verification.json，须随最终验收更新。','small')
 p('4. 百炼模型与接口文档：<link href="https://help.aliyun.com/zh/model-studio/qwen-plus" color="#2459A8">qwen-plus 能力与价格</link>；<link href="https://help.aliyun.com/zh/model-studio/qwen-api-via-openai-chat-completions" color="#2459A8">OpenAI 兼容 Chat 接口</link>。价格及服务能力以官方当前说明为准。','small')
+page()
+
+# 9-10. Actual product screenshots from the recorded demonstration.
+title('09','项目图片：正常规划与受阻重算')
+screenshot('route-normal.jpg', '图 1  实际网页录屏帧：正常设施状态下，100 厘米净宽需求得到 560 米模拟路线。卡片展示路段、通行条件、分步指引入口和工具记录。')
+screenshot('route-lift-closed.jpg', '图 2  保持同一起点、目的地与净宽需求，设置 E4 电梯停运后重算为 890 米。距离和设施状态均属合成演示数据，不用于真实出行。')
+page()
+
+title('10','项目图片：分步指引与资料来源')
+screenshot('step-guidance.jpg', '图 3  路线交接到分步指引页；示意图显示避开停用连接的路径。进度依赖用户模拟确认，未实现真实 GPS 导航或现场可达性核验。')
+screenshot('station-sources.jpg', '图 4  香港站资料问答的来源卡片，展示原文链接、检索日期和未知事项。四图均来自本项目真实操作录屏，截取文件随项目保存。')
+page()
+
+# 11. User-confirmed history and the scope of the project's improvements.
+title('11','项目来源、发表记录与优化说明')
+h('此前发表、参赛与获奖情况')
+p(escape(team.get('priorPublication', '除本次 GitHub 源码公开外，此前未发表、未参赛、未获奖；参赛者于 2026-11-18 确认。')))
+p('当前源码公开地址：<link href="' + escape(repository) + '" color="#2459A8">' + escape(repository) + '</link>。公开源码不等于取得奖项或已完成本届省赛提交。', 'small')
+h('项目来源与基于既有项目的优化')
+p(escape(team.get('projectOrigin', '基于参赛者自己原有的 AccessAI 项目持续优化，未基于其他完整项目改造；开发中使用 Codex 等 AI 辅助工具。')))
+p('本次提交继承自己既有的网页与无障碍出行主题。以下列出本轮围绕比赛任务完成的实现与验证工作，不将第三方模型、浏览器能力或官方设施资料宣称为自研。')
+table(['优化方向','本轮具体实现 / 可核对证据'],[
+    ['AI 能力落地','接入服务端 qwen-plus，新增受限工具编排、配置模板、错误反馈与明确的非 AI 规则演示模式。'],
+    ['路网与任务闭环','完善连续路网计算、净宽和停运过滤；助手结果交接分段指引；无连通路径时明确返回不可达。'],
+    ['资料与事实约束','整理六站官方设施摘要及来源；路线数值从工具结果生成，防止自由文本改写。静态设施资料与实时状态明确区分。'],
+    ['交互与可访问性','完善键盘焦点、移动布局、可取消 / 重试反馈与浏览器按需朗读；语音属于平台能力，不是自研多模态模型。'],
+    ['测试与交付','保留 20 题真实评测的 17/20 首轮结果、4 项定向复测及失败记录；干净目录 56/56 回归。补齐运行说明、录屏和本报告。'],
+],[96,WIDTH-96])
+h('第三方依赖与 AI 辅助开发说明')
+p('网页使用 HTML、CSS、JavaScript 与 Node.js；模型来自阿里云百炼，资料来自地铁运营方公开页面，报告与视频使用相应生成工具。开发中使用 Codex 等 AI 辅助工具，曲珈莹单人负责项目实现与参赛材料，需理解并说明核心逻辑、边界与测试证据。未开展真实用户访谈或现场测量。', 'small')
 
 def decorate(canvas, doc):
     canvas.saveState()
@@ -260,9 +297,9 @@ def decorate(canvas, doc):
     canvas.restoreState()
 
 doc = SimpleDocTemplate(str(OUT), pagesize=A4, rightMargin=46,leftMargin=46,topMargin=57,bottomMargin=57,
-                        title='AccessAI 技术文档 - 参赛交付版',author='曲珈莹 · 云南大学',pageCompression=1)
+                        title='AccessAI 作品介绍与技术报告',author='Estrela717 · 曲珈莹 · 云南大学',pageCompression=1)
 doc.build(story,onFirstPage=decorate,onLaterPages=decorate)
 from pypdf import PdfReader
 reader=PdfReader(str(OUT))
-assert len(reader.pages)<=10, f'Expected at most 10 pages, got {len(reader.pages)}'
+assert len(reader.pages)<=12, f'Expected at most 12 pages, got {len(reader.pages)}'
 print(json.dumps({'output':str(OUT),'pages':len(reader.pages),'bytes':OUT.stat().st_size},ensure_ascii=False))
